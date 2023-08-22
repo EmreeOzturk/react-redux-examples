@@ -1,5 +1,8 @@
 import { MdPostAdd } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { modalToggle } from "../redux/modalSlice";
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <div className=" flex w-full items-center mx-auto h-16 pl-16 px-32 py-10 relative bg-[#5A5A66]">
       <div className="flex w-full items-center justify-between  ">
@@ -24,7 +27,10 @@ const Header = () => {
               placeholder="Arama Yapın"
             />
           </div>
-          <div className="flex items-center justify-center absolute right-14 bottom-5.5 border border-white rounded-md px-4 py-2 ">
+          <div
+            onClick={() => dispatch(modalToggle())}
+            className="flex items-center cursor-pointer justify-center absolute right-14 bottom-5.5 border border-white rounded-md px-4 py-2 "
+          >
             <MdPostAdd className="text-white text-2xl" />
           </div>
         </div>

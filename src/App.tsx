@@ -7,7 +7,6 @@ export default function App() {
     <div>
       <Router>
         <Header />
-
         <Routes>
           <Route index path="/" element={<Products />} />
           <Route path="/test" element={<Test />} />
