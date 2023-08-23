@@ -5,19 +5,13 @@ import type { RootState } from "../redux/store";
 
 const Products = () => {
   const { isOpen } = useSelector((state: RootState) => state.modal);
-
-
-  console.log(isOpen);
+  const { data } = useSelector((state: RootState) => state.data);
+  console.log(data);
   return (
     <div>
       <ProductCard />
-      {isOpen && (
-        <Modal
-          title="Add Product"
-          btnFunc={() => console.log("modal")}
-          btnText="Add"
-        />
-      )}
+    
+      {isOpen && <Modal title="Add Product" btnText="Add" />}
     </div>
   );
 };

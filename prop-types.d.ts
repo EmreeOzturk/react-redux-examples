@@ -1,7 +1,6 @@
 export type ModalProps = {
   title: string;
   btnText: string;
-  btnFunc: () => void;
 };
 export type InputProps = {
   label: string;

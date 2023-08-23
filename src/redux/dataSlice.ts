@@ -13,10 +13,12 @@ export const dataSlice = createSlice({
   name: "data",
   initialState,
   reducers: {
-    
+    createData: (state, action: PayloadAction<object>) => {
+      state.data.push(action.payload);
+    },
   },
 });
 
-export const {  } = dataSlice.actions;
+export const { createData } = dataSlice.actions;
 
 export default dataSlice.reducer;
